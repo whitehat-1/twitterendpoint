@@ -29,6 +29,8 @@ async def signup(name: str = Form(...),
  emailaddress: str = Form(...), 
  Dateofbirth: str = Form(...),
  phonenumber: int = Form(...)):
+        if len(phonenumber) != 10:
+     return {"message": "Phone number must be 10 digits"}
     return {"name": name, 
     "emailaddress": emailaddress, 
     "Dateofbirth": Dateofbirth, 
